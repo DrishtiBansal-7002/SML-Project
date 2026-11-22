@@ -1,106 +1,72 @@
-# 🛍️ Shopper Intelligence
-### Customer Segmentation & Purchase Prediction Using Machine Learning
+# Shopper Intelligence – Customer Segmentation & Purchase Prediction
 
-Shopper Intelligence is a Machine Learning-based project that analyzes online shopping behaviour, identifies patterns in browsing sessions, and predicts purchase intention using classification and clustering techniques.The project combines Logistic Regression and K-Means Clustering with an interactive Streamlit web application to explore shopping behaviour and generate meaningful insights.
+## Project Overview
 
-## 📌 Project Overview
+Shopper Intelligence is a Machine Learning-based project designed to analyze online shopping behavior, segment shopping sessions, and predict whether a visitor is likely to make a purchase.
 
-Online shopping platforms generate large amounts of browsing data. Understanding this data can help identify purchasing patterns and distinguish between different types of shopping sessions.
+The project uses the Online Shoppers Purchasing Intention dataset and combines classification and clustering techniques to understand customer behavior and support data-driven decisions.
 
-Shopper Intelligence focuses on two major Machine Learning tasks:
+A Streamlit web application is developed to present the analysis, predictions, customer segments, and model performance through an interactive dashboard.
 
-- **Purchase Prediction:** Predict whether an online shopping session will result in a purchase.
-- **Customer Segmentation:** Group similar shopping sessions based on browsing behaviour and session characteristics.
+## Objectives
 
-The project also provides an interactive dashboard to explore shopping statistics, customer segments, purchase predictions, and model performance.
+- Analyze online shopping behavior using Exploratory Data Analysis (EDA).
+- Predict whether a shopping session will result in a purchase.
+- Group shopping sessions into different segments using clustering.
+- Visualize important patterns and model performance.
+- Present the results through an interactive Streamlit application.
 
-## 🎯 Problem Statement
+## Dataset
 
-E-commerce platforms need to understand visitor behaviour to improve customer engagement and purchasing outcomes.
+**Dataset:** Online Shoppers Purchasing Intention Dataset
 
-This project addresses the following questions:
+- 12,330 sessions
+- 18 features
+- Contains numerical and categorical attributes related to online shopping behavior.
+- Target variable: `Revenue`
 
-1. Can we predict whether a visitor will make a purchase based on their browsing session?
-2. Can we identify groups of similar shopping sessions using unsupervised learning?
-3. What insights can be extracted from online shopping behaviour?
+The `Revenue` column indicates whether a shopping session resulted in a purchase.
 
-## 📊 Dataset
+## Technologies Used
 
-**Dataset:** Online Shoppers Intention Dataset
+- Python
+- Pandas
+- NumPy
+- Scikit-learn
+- Matplotlib
+- Seaborn
+- Plotly
+- Streamlit
+- Joblib
+- Jupyter Notebook
 
-The dataset contains 12,330 browsing sessions and 18 features describing visitor activities and session characteristics.
-
-### Important Features
-
-| Feature | Description |
-|---|---|
-| Administrative | Administrative pages visited |
-| Informational | Informational pages visited |
-| ProductRelated | Product-related pages visited |
-| BounceRates | Bounce rate of the session |
-| ExitRates | Exit rate of the session |
-| PageValues | Value of pages visited |
-| SpecialDay | Closeness to a special shopping day |
-| Month | Month of the session |
-| VisitorType | Type of website visitor |
-| Weekend | Whether the session occurred on a weekend |
-| Revenue | Purchase outcome |
-
-**Target Variable:** `Revenue`
-
-- `1` – Purchase
-- `0` – No Purchase
-
-The dataset is cleaned by removing duplicate rows, and exploratory data analysis is performed to understand the underlying patterns.
-
-## 🧠 Machine Learning Algorithms
+## Machine Learning Models
 
 ### 1. Logistic Regression – Purchase Prediction
 
-Logistic Regression is used as a supervised classification algorithm to predict whether an online shopping session will result in a purchase.
+Logistic Regression is used as a classification algorithm to predict whether a visitor will make a purchase.
 
-**Implementation:**
-- Numerical feature preprocessing using median imputation and StandardScaler.
-- Categorical feature preprocessing using most-frequent imputation and OneHotEncoder.
-- Train-test split with 80% training data and 20% testing data.
-- Class balancing using `class_weight='balanced'`.
+The model uses preprocessing techniques such as:
+- Missing value imputation
+- Feature scaling
+- One-hot encoding
+- Train-test split
+
+The model is evaluated using Accuracy, Precision, Recall, F1 Score, and ROC-AUC.
 
 ### 2. K-Means Clustering – Customer Segmentation
 
-K-Means is used as an unsupervised learning algorithm to group similar online shopping sessions.
+K-Means is used to group shopping sessions based on their behavioral patterns.
 
-**Implementation:**
-- Revenue is excluded from clustering.
-- Numerical and categorical features are preprocessed separately.
-- The Elbow Method and Silhouette Score are used to examine cluster configurations.
+- The `Revenue` column is excluded during clustering.
+- The Elbow Method and Silhouette Score are used to help determine the number of clusters.
 - The final model uses 2 clusters.
 
-The resulting clusters represent groups of similar shopping sessions rather than individually identified customers.
+**Note:** These clusters represent groups of shopping sessions based on behavior, not individually identified customers.
 
-## ✨ Key Features
+## Model Performance
 
-- **Interactive Dashboard:** Displays total sessions, purchases, non-purchases, and conversion rate.
-- **Customer Segmentation:** Visualizes shopping-session clusters and their behavioural profiles.
-- **Purchase Prediction:** Estimates purchase intention using visitor session details.
-- **Model Performance:** Presents classification evaluation results.
-- **Data Visualization:** Displays purchase distribution, session statistics, and cluster comparisons.
-- **Streamlit Interface:** Provides an interactive interface with multiple navigation sections.
-
-## 📸 Application Screenshots
-
-The following screenshots showcase the different sections of the Shopper Intelligence application.
-
-### 1. Dashboard
-
-### 2. Customer Segmentation
-
-### 3. Purchase Prediction
-
-### 4. Model Performance
-
-## 📈 Model Evaluation
-
-The Logistic Regression model is evaluated using the following metrics on the test dataset:
+The Logistic Regression model achieved the following results:
 
 | Evaluation Metric | Score |
 |---|---:|
@@ -110,51 +76,14 @@ The Logistic Regression model is evaluated using the following metrics on the te
 | F1 Score | 62.31% |
 | ROC-AUC | 91.09% |
 
-These results indicate the model's classification performance on the test dataset.
-
-## 🔄 Project Workflow
-
-1. Dataset Collection
-2. Data Understanding and Exploration
-3. Data Cleaning and Preprocessing
-4. Exploratory Data Analysis
-5. Feature Engineering and Preprocessing
-6. Train-Test Split
-7. Logistic Regression Model Training
-8. K-Means Clustering
-9. Model Evaluation
-10. Model Saving and Integration
-11. Streamlit Web Application Development
-
-## 🛠️ Technology Stack
-
-| Category | Technologies |
-|---|---|
-| Programming Language | Python |
-| Data Analysis | Pandas, NumPy |
-| Data Visualization | Matplotlib, Seaborn, Plotly |
-| Machine Learning | Scikit-learn |
-| Model Serialization | Joblib |
-| Web Application | Streamlit |
-| Development Environment | Jupyter Notebook / Google Colab |
-
-## 📁 Project Structure
+## Project Structure
 
 ```text
-SML-Project/
+Shopper-Intelligence/
 │
-├── .streamlit/
-│   └── config.toml
-│
-├── screenshots/
-│   ├── dashboard.png
-│   ├── customer-segmentation.png
-│   ├── purchase-prediction.png
-│   └── model-performance.png
-│
+├── app.py
 ├── Shopper Intelligence.ipynb
 ├── Online Shopper Dataset.csv
-├── app.py
 │
 ├── purchase_model.pkl
 ├── clustering_model.pkl
@@ -164,32 +93,62 @@ SML-Project/
 ├── test_data.csv
 ├── model_metrics.json
 │
-├── requirements.txt
-└── README.md
+└── .streamlit/
+    └── config.toml
+```
 
-## 🚀 Future Scope
+## Installation and Execution
 
-- Experiment with additional classification algorithms.
-- Improve predictive performance through hyperparameter tuning.
-- Explore alternative clustering techniques.
-- Add more detailed behavioural analytics.
-- Enhance the dashboard with additional interactive visualizations.
-- Deploy the application for online accessibility.
+### 1. Clone the Repository
 
-## 👥 Team Members
+```bash
+git clone YOUR_REPOSITORY_LINK
+```
 
-- Drishti Bansal [S25CSEU1174]
-- Yashvi Parashar [S25CSEU1168]
+### 2. Navigate to the Project Directory
 
-## 🎓 Academic Context
+```bash
+cd SML-Project
+```
 
-Developed as part of the Statistical Machine Learning (SML) coursework.
+### 3. Install Required Libraries
 
-## Acknowledgements
+```bash
+pip install streamlit pandas numpy scikit-learn matplotlib seaborn plotly joblib
+```
 
-- Online Shoppers Intention Dataset.
-- Scikit-learn documentation.
-- Streamlit documentation.
-- Python data science community.
+### 4. Run the Streamlit Application
+
+```bash
+streamlit run app.py
+```
+
+The application will open in your browser.
+
+## Application Features
+
+The Streamlit application includes the following sections:
+
+- **Dashboard:** Overview of shopping behavior and key statistics.
+- **Customer Segmentation:** Visualization and analysis of shopping session clusters.
+- **Purchase Prediction:** Predicts the likelihood of a shopping session resulting in a purchase.
+- **Model Performance:** Displays evaluation metrics of the trained model.
+- **About Project:** Provides information about the project and its objectives.
+
+## Future Scope
+
+- Experiment with additional Machine Learning algorithms to improve prediction performance.
+- Explore more advanced customer segmentation techniques.
+- Incorporate additional shopping behavior features.
+- Improve the user interface and dashboard experience.
+- Deploy the application online for wider accessibility.
+
+## Conclusion
+
+Shopper Intelligence demonstrates how Machine Learning techniques can be used to understand online shopping behavior, identify behavioral patterns, and predict purchase intentions.
+
+By combining Logistic Regression, K-Means Clustering, and an interactive Streamlit application, the project provides an accessible way to explore and interpret online shopping data.
+
+
 
 
