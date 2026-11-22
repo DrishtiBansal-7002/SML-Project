@@ -96,35 +96,6 @@ Shopper-Intelligence/
 └── .streamlit/
     └── config.toml
 ```
-
-## Installation and Execution
-
-### 1. Clone the Repository
-
-```bash
-git clone YOUR_REPOSITORY_LINK
-```
-
-### 2. Navigate to the Project Directory
-
-```bash
-cd SML-Project
-```
-
-### 3. Install Required Libraries
-
-```bash
-pip install streamlit pandas numpy scikit-learn matplotlib seaborn plotly joblib
-```
-
-### 4. Run the Streamlit Application
-
-```bash
-streamlit run app.py
-```
-
-The application will open in your browser.
-
 ## Application Features
 
 The Streamlit application includes the following sections:
@@ -142,6 +113,11 @@ The Streamlit application includes the following sections:
 - Incorporate additional shopping behavior features.
 - Improve the user interface and dashboard experience.
 - Deploy the application online for wider accessibility.
+
+## Team Members
+
+Drishti Bansal – S25CSEU1174
+Yashvi Parashar - S25CSEU1168
 
 ## Conclusion
 
