@@ -247,6 +247,11 @@ Shopper Intelligence demonstrates how Machine Learning techniques can be applied
 
 By combining Logistic Regression, K-Means Clustering, data visualization, and an interactive Streamlit application, the project brings model development and interactive analysis together in one platform.
 
+## Contributors
+
+- Drishti Bansal
+- Yashvi Parashar
+
 ---
 
 **Project:** Shopper Intelligence – Customer Segmentation & Purchase Prediction
