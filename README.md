@@ -219,7 +219,7 @@ cd SML-Project
 ### Step 3: Install Required Libraries
 
 ```bash
-pip install streamlit pandas numpy scikit-learn matplotlib seaborn plotly joblib
+pip install -r requirements.txt
 ```
 
 ### Step 4: Run the Streamlit Application
